@@ -349,25 +349,43 @@ function hideAll() {
     document.getElementById("lowStockSection").style.display = "none";
 }
 
+// Active Menu
+function setActiveMenu(menuId) {
+
+    document.querySelectorAll(".sidebar ul li").forEach(item => {
+        item.classList.remove("active");
+    });
+
+    document.getElementById(menuId).classList.add("active");
+}
+
+// Dashboard
 document.getElementById("dashboardMenu").onclick = () => {
     hideAll();
     document.getElementById("dashboardSection").style.display = "block";
+    setActiveMenu("dashboardMenu");
 };
 
+// Products
 document.getElementById("productsMenu").onclick = () => {
     hideAll();
     document.getElementById("productsSection").style.display = "block";
+    setActiveMenu("productsMenu");
 };
 
+// Sales
 document.getElementById("salesMenu").onclick = () => {
     hideAll();
     document.getElementById("salesSection").style.display = "block";
     loadSales();
+    setActiveMenu("salesMenu");
 };
 
+// Low Stock
 document.getElementById("lowStockMenu").onclick = () => {
     hideAll();
     document.getElementById("lowStockSection").style.display = "block";
+    setActiveMenu("lowStockMenu");
 };
 
 // INIT
