@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Inventory</h2>
+
+    <ul>
+      <!-- <li class="active">Dashboard</li>
+      <li>Products</li>
+      <li>Sales</li>
+      <li>Low Stock</li> -->
+      <!-- <li>Logout</li> -->
+       <li id="dashboardMenu" class="active">Dashboard</li>
+<li id="productsMenu">Products</li>
+<li id="salesMenu">Sales</li>
+<li id="lowStockMenu">Low Stock</li>
+       <li id="logoutBtn">Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+
+    <!-- Top Navbar -->
+    <div class="topbar">
+      <h1>Inventory Dashboard</h1>
+
+      <input type="text" id="searchInput" placeholder="Search Product...">
+    </div>
+
+   <!-- Dashboard Section -->
+<div id="dashboardSection">
+
+<div class="cards">
+
+
+      <div class="card">
+  <h3>Total Products</h3>
+  <p id="totalProducts">0</p>
+</div>
+
+<div class="card">
+  <h3>Total Sales</h3>
+  <p id="totalSales">0</p>
+</div>
+
+<div class="card low">
+  <h3>Low Stock</h3>
+  <p id="lowStock">0</p>
+</div>
+
+    </div>
+    </div>
+    <div class="recent-products">
+    <h2>Recent Products</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+
+        <tbody id="dashboardProducts"></tbody>
+    </table>
+</div>
+
+
+
+<!-- Products Section -->
+<div id="productsSection">
+
+<div class="form-section">
+
+      <h2>Add Product</h2>
+
+      <form id="productForm">
+        <input type="file" id="image" accept="image/*">
+
+        <input type="text" id="name" placeholder="Product Name" required>
+
+        <input type="text" id="category" placeholder="Category" required>
+
+        <input type="number" id="price" placeholder="Price" required>
+
+        <input type="number" id="stock" placeholder="Stock Quantity" required>
+
+
+        <button type="submit">Add Product</button>
+
+      </form>
+
+    </div>
+
+    <!-- Product Table -->
+    <div class="table-section">
+
+      <h2>Product List</h2>
+
+      <table>
+
+        <thead>
+          <tr>
+            
+            <th>ID</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+
+        <tbody id="productTable">
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+</div>
+
+
+
+<div id="salesSection" style="display:none;">
+    <h2>Sales Records</h2>
+
+    <canvas id="salesChart"></canvas>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Customer Name</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+
+        <tbody id="salesTable"></tbody>
+    </table>
+</div>
+
+<div id="lowStockSection" style="display:none;">
+    <h2>Low Stock Products</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Stock</th>
+                 <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="lowStockTable"></tbody>
+    </table>
+</div>
+
+
+
+  </div>
+  <!-- Sales Modal -->
+<div id="saleModal" style="display:none;" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Customer Information</h2>
+
+        <input type="text" id="customerName" placeholder="Customer Name">
+
+        <input type="text" id="customerPhone" placeholder="Phone Number">
+
+        <textarea id="customerAddress" placeholder="Address"></textarea>
+
+        <input type="date" id="saleDate">
+
+        <button id="confirmSaleBtn">
+            Confirm Sale
+        </button>
+
+        <button onclick="closeSaleModal()">
+            Cancel
+        </button>
+
+    </div>
+
+</div>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
