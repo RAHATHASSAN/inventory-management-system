@@ -13,11 +13,7 @@
     <h2>Inventory</h2>
 
     <ul>
-      <!-- <li class="active">Dashboard</li>
-      <li>Products</li>
-      <li>Sales</li>
-      <li>Low Stock</li> -->
-      <!-- <li>Logout</li> -->
+      
        <li id="dashboardMenu" class="active">Dashboard</li>
 <li id="productsMenu">Products</li>
 <li id="salesMenu">Sales</li>
@@ -36,46 +32,48 @@
       <input type="text" id="searchInput" placeholder="Search Product...">
     </div>
 
-   <!-- Dashboard Section -->
+  
+<!-- Dashboard Section -->
 <div id="dashboardSection">
 
-<div class="cards">
+    <div class="cards">
 
+        <div class="card">
+            <h3>Total Products</h3>
+            <p id="totalProducts">0</p>
+        </div>
 
-      <div class="card">
-  <h3>Total Products</h3>
-  <p id="totalProducts">0</p>
-</div>
+        <div class="card">
+            <h3>Total Sales</h3>
+            <p id="totalSales">0</p>
+        </div>
 
-<div class="card">
-  <h3>Total Sales</h3>
-  <p id="totalSales">0</p>
-</div>
-
-<div class="card low">
-  <h3>Low Stock</h3>
-  <p id="lowStock">0</p>
-</div>
+        <div class="card low">
+            <h3>Low Stock</h3>
+            <p id="lowStock">0</p>
+        </div>
 
     </div>
-    </div>
+
+    <!-- Recent Products -->
     <div class="recent-products">
-    <h2>Recent Products</h2>
+        <h2>Recent Products</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Stock</th>
-            </tr>
-        </thead>
+        <table>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                </tr>
+            </thead>
 
-        <tbody id="dashboardProducts"></tbody>
-    </table>
+            <tbody id="dashboardProducts"></tbody>
+        </table>
+    </div>
+
 </div>
-
 
 
 <!-- Products Section -->
